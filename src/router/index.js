@@ -112,6 +112,44 @@ export default new Router({
 
 export const asyncRouterMap = [
   {
+    path: '/productManage',
+    component: Layout,
+    redirect: 'noredirect',
+    meta: {
+      title: '商品管理',
+      icon: 'lock'
+    },
+    children: [
+      {
+        path: '/itemManage/index',
+        component: () => import('@/views/yhc/product-manage/itemManage/index'),
+        name: 'ItemManage',
+        meta: {
+          title: 'item 管理',
+          icon: 'icon'
+        }
+      },
+      {
+        path: '/itemManage/index',
+        component: () => import('@/views/yhc/product-manage/sKUManage/index'),
+        name: 'SKUManage',
+        meta: {
+          title: 'SKU 管理',
+          icon: 'guide'
+        }
+      },
+      {
+        path: '/itemManage/index',
+        component: () => import('@/views/yhc/product-manage/deviceManage/index'),
+        name: 'DeviceManage',
+        meta: {
+          title: '设备货道管理',
+          icon: 'shopping'
+        }
+      }
+    ]
+  },
+  {
     path: '/permission',
     component: Layout,
     redirect: '/permission/index',
@@ -161,7 +199,7 @@ export const asyncRouterMap = [
   chartsRouter,
   nestedRouter,
   tableRouter,
-
+  /*
   {
     path: '/example',
     component: Layout,
@@ -206,7 +244,7 @@ export const asyncRouterMap = [
       }
     ]
   },
-
+  /*
   {
     path: '/error',
     component: Layout,
@@ -231,7 +269,7 @@ export const asyncRouterMap = [
       }
     ]
   },
-
+  /*
   {
     path: '/error-log',
     component: Layout,
@@ -245,7 +283,7 @@ export const asyncRouterMap = [
       }
     ]
   },
-
+  /*
   {
     path: '/excel',
     component: Layout,
@@ -276,7 +314,7 @@ export const asyncRouterMap = [
       }
     ]
   },
-
+  /*
   {
     path: '/zip',
     component: Layout,
@@ -292,7 +330,7 @@ export const asyncRouterMap = [
       }
     ]
   },
-
+  /*
   {
     path: '/pdf',
     component: Layout,
@@ -307,11 +345,13 @@ export const asyncRouterMap = [
       }
     ]
   },
+
   {
     path: '/pdf/download',
     component: () => import('@/views/pdf/download'),
     hidden: true
   },
+  */
 
   {
     path: '/theme',
@@ -325,8 +365,8 @@ export const asyncRouterMap = [
         meta: { title: 'theme', icon: 'theme' }
       }
     ]
-  },
-
+  }
+  /*
   {
     path: '/clipboard',
     component: Layout,
@@ -366,4 +406,5 @@ export const asyncRouterMap = [
   },
 
   { path: '*', redirect: '/404', hidden: true }
+  */
 ]
