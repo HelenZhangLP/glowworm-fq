@@ -34,11 +34,6 @@
               {{ $t('navbar.dashboard') }}
             </el-dropdown-item>
           </router-link>
-          <a v-if="isSet" target="_blank" href="https://github.com/PanJiaChen/vue-element-admin/">
-            <el-dropdown-item>
-              {{ $t('navbar.github') }}
-            </el-dropdown-item>
-          </a>
           <el-dropdown-item divided>
             <span style="display:block;" @click="logout">{{ $t('navbar.logOut') }}</span>
           </el-dropdown-item>
@@ -70,7 +65,7 @@ export default {
   },
   data() {
     return {
-      isSet: false // 关闭国际化，屏扩展，字体切换、换主题
+      isSet: true // 关闭国际化，屏扩展，字体切换、换主题
     }
   },
   computed: {
